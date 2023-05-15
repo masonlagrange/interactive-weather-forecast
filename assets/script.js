@@ -34,7 +34,7 @@ var formSubmitHandler = function (event, history) {
     }
 // Makes an API call to the geocoding API and sends that info to other APIs
     if (citySearch) {
-        fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&limit=1&appid=7469a41a0c74ae4542c51ace1281222f')
+        fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&limit=1&appid=7469a41a0c74ae4542c51ace1281222f')
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (data) {
@@ -65,7 +65,7 @@ var historyClickHandler = function (event) {
 
 // Makes call to 5 day weather API
 var apiCallHandler = function (lat, long) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + long + '&appid=7469a41a0c74ae4542c51ace1281222f&units=metric'
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + long + '&appid=7469a41a0c74ae4542c51ace1281222f&units=metric'
 
     fetch(apiUrl)
         .then(function (response) {
